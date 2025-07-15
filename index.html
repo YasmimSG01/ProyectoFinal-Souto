@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Personal</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div id="principal">
+        <header>
+            <h1><i class="fas fa-book"></i> Mi Biblioteca Personal</h1>
+            <p>Organiza y gestiona tus libros de manera sencilla</p>
+        </header>
+        
+        <div class="seccion">
+            <h2><i class="fas fa-plus-circle"></i> Agregar o Editar Libro</h2>
+            <form id="form-libro">
+                <input type="text" id="titulo" placeholder="Título" required>
+                <input type="text" id="autor" placeholder="Autor" required>
+                <input type="text" id="editorial" placeholder="Editorial">
+                <input type="text" id="edicion" placeholder="Edición">
+                <input type="number" id="anio" placeholder="Año" min="0">
+                <input type="text" id="idioma" placeholder="Idioma">
+                <button type="submit" id="btn-submit">Agregar Libro</button>
+                <button type="button" id="btn-cancelar-edicion" style="display:none;">Cancelar Edición</button>
+            </form>
+        </div>
+
+        <div class="listas-container">
+            <div class="lista-libros">
+                <h2><i class="fas fa-bookmark"></i> Por Leer <span id="contador-no-leidos">(0)</span></h2>
+                <div id="no-leidos"></div>
+            </div>
+            
+            <div class="lista-libros">
+                <h2><i class="fas fa-check-circle"></i> Leídos <span id="contador-leidos">(0)</span></h2>
+                <div id="leidos"></div>
+            </div>
+        </div>
+
+        <div class="seccion" id="marcar-leido-modal" style="display: none;">
+            <h2><i class="fas fa-check"></i> Marcar como Leído</h2>
+            <div id="form-leido">
+                <input type="number" id="nota" placeholder="Nota (1-10)" min="1" max="10">
+                <textarea id="reseña" placeholder="Reseña"></textarea>
+                <div class="botones-accion">
+                    <button id="btn-confirmar-leido">Confirmar</button>
+                    <button id="btn-cancelar" class="cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
